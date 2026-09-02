@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="OTDR trace illustration">
+  <rect width="480" height="360" fill="#101713"/>
+  <rect x="28" y="28" width="424" height="260" fill="#0e1613" stroke="#243029"/>
+  <!-- grid -->
+  <g stroke="#1a241e" stroke-width="1">
+    <path d="M28 93h424M28 158h424M28 223h424M134 28v260M240 28v260M346 28v260"/>
+  </g>
+  <!-- trace -->
+  <path d="M40 60 L150 175 L200 185 L250 230 L310 240 L380 248 L440 252"
+        fill="none" stroke="#e8a33d" stroke-width="2.5"/>
+  <!-- event markers -->
+  <g stroke="#3f6b5c" stroke-width="1.5">
+    <path d="M150 60v175"/><path d="M250 60v170"/><path d="M380 60v188"/>
+  </g>
+  <g font-family="monospace" font-size="12" fill="#9aa79e">
+    <text x="36" y="50">1310nm · 1550nm</text>
+    <text x="330" y="50">-24.6 dB</text>
+  </g>
+  <g font-family="monospace" font-size="11" fill="#5c6a60">
+    <text x="36" y="316">EVENT  1.284 km   REFL -52.1 dB   LOSS 0.08 dB</text>
+    <text x="36" y="334">FIBER  G.652D   LENGTH 12.4 km   ORL 41.2 dB</text>
+  </g>
+  <circle cx="440" cy="70" r="5" fill="#e8a33d"/>
+</svg>

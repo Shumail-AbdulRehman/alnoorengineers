@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="Rectifier module illustration">
+  <rect width="480" height="360" fill="#101713"/>
+  <rect x="60" y="60" width="360" height="240" fill="#161f1b" stroke="#243029" stroke-width="2"/>
+  <rect x="60" y="60" width="360" height="46" fill="#f4f2ea"/>
+  <text x="80" y="90" font-family="monospace" font-size="18" font-weight="700" fill="#0e1613">RECTIFIER 48V</text>
+  <!-- vents -->
+  <g fill="#0e1613">
+    <rect x="84" y="130" width="312" height="8"/><rect x="84" y="150" width="312" height="8"/>
+    <rect x="84" y="170" width="312" height="8"/><rect x="84" y="190" width="312" height="8"/>
+    <rect x="84" y="210" width="312" height="8"/><rect x="84" y="230" width="312" height="8"/>
+  </g>
+  <!-- LEDs -->
+  <circle cx="392" cy="274" r="7" fill="#e8a33d"/>
+  <circle cx="366" cy="274" r="7" fill="#3f6b5c"/>
+  <g font-family="monospace" font-size="11" fill="#5c6a60">
+    <text x="84" y="282">OUTPUT 53.5V · 3000W</text>
+  </g>
+  <rect x="60" y="312" width="360" height="10" fill="#161f1b" stroke="#243029"/>
+  <g stroke="#3f6b5c" stroke-width="2">
+    <path d="M75 312v10M95 312v10M115 312v10M135 312v10M155 312v10M175 312v10M195 312v10M215 312v10M235 312v10M255 312v10M275 312v10M295 312v10M315 312v10M335 312v10M355 312v10M375 312v10M395 312v10"/>
+  </g>
+</svg>

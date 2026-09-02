@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Al Noor Engineers (Pvt.) Ltd. — telecom equipment repair, maintenance, and supply of new and refurbished gear for GSM/PSTN operators in Pakistan. 10+ years."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Al Noor Engineers — Telecom Equipment Repair &amp; Supply" />
+    <meta
+      property="og:description"
+      content="Telecom equipment repair, maintenance and supply — done to operator standard. Serving GSM and PSTN operators across Pakistan for over a decade."
+    />
+    <meta property="og:image" content="/images/banner-services.jpg" />
+    <title>Al Noor Engineers — Telecom Equipment Repair &amp; Supply</title>
+    <script>
+      // Set theme before first paint to avoid a flash of the wrong mode.
+      // Dark is the default; light applies when chosen before, forced via
+      // ?theme=light|dark, or preferred by the OS.
+      (function () {
+        try {
+          var q = new URLSearchParams(window.location.search).get('theme')
+          if (q === 'light') {
+            document.documentElement.classList.add('light')
+            return
+          }
+          if (q === 'dark') return
+          var stored = localStorage.getItem('ane-theme')
+          if (
+            stored === 'light' ||
+            (stored === null &&
+              window.matchMedia('(prefers-color-scheme: light)').matches)
+          ) {
+            document.documentElement.classList.add('light')
+          }
+        } catch (e) {
+          /* storage unavailable */
+        }
+      })()
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
