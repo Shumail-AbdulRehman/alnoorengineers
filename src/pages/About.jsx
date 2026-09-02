@@ -1,5 +1,5 @@
 import PageBanner from '../components/PageBanner'
-import RackElevation from '../components/RackElevation'
+import SupplyCatalog from '../components/SupplyCatalog'
 import LeadershipBadge from '../components/LeadershipBadge'
 import CTABand from '../components/CTABand'
 import { aboutIntro, objectives, supplies, leadership } from '../data/content'
@@ -29,32 +29,30 @@ export default function About() {
         </div>
       </section>
 
-      {/* Our Supplies — rack elevation */}
+      {/* Our Supplies — image catalog */}
       <section className="border-b border-line">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-          <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl">Our Supplies</h2>
+          <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
+            <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl">Our Supplies</h2>
+            <span className="tnum font-mono text-xs text-dim">{supplies.length} LINES</span>
+          </div>
           <p className="mt-3 max-w-[62ch] text-dim">
             New and refurbished stock moving through the warehouse — rectifiers, solar,
             power, fiber and microwave.
           </p>
-          <div className="mt-8 max-w-3xl">
-            <RackElevation
-              title="Supply Inventory"
-              subtitle={`${supplies.length} LINES`}
-              items={supplies}
-              accent="amber"
-            />
+          <div className="mt-8">
+            <SupplyCatalog items={supplies} />
           </div>
         </div>
       </section>
 
       {/* Leadership — full bios */}
       <section className="border-b border-line">
-        <div className="mx-auto max-w-6xl px-4 py-16 text-center sm:px-6">
+        <div className="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6">
           <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl">Leadership</h2>
-          <div className="mt-10 flex flex-wrap justify-center gap-10 md:gap-14">
-            {leadership.map((person) => (
-              <LeadershipBadge key={person.name} person={person} full />
+          <div className="mt-12 space-y-16 md:space-y-20">
+            {leadership.map((person, i) => (
+              <LeadershipBadge key={person.name} person={person} full flip={i % 2 === 1} />
             ))}
           </div>
         </div>

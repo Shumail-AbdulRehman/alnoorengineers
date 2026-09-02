@@ -110,42 +110,51 @@ export const repairServices = [
   { name: 'ZTE power & environment supervisory' },
 ]
 
+// Supply catalog images live in /public/images/supply/. Sourced from Openverse
+// (CC0 / public domain unless credited below — CC-BY requires keeping the credit):
+//   gensets.jpg          "Early industrial generator" by quinet (CC-BY) — flickr.com/photos/91994044@N00/24859385890
+//   ats-panels.jpg       "Electrical switchgear" by David Jones (CC-BY) — flickr.com/photos/45457437@N00/36083223894
+//   spds.jpg             "Outlet panels, converters, power strips" by AstroSamantha (CC-BY) — flickr.com/photos/65541944@N07/6250035530
+//   duct-rod.jpg         "Guiding New Fiber from Reel Truck" by Tessa Bury (CC-BY) — commons.wikimedia.org?curid=184601539
+//   multimeters.jpg      "Voltage-Testing Digital-Multimeter" by Emilian Robert Vicol (CC-BY) — commons.wikimedia.org?curid=38382862
 export const supplyServices = [
-  { name: 'SFPs' },
-  { name: 'SPDs', tag: 'surge protection' },
-  { name: 'OTDR' },
-  { name: 'Patch cords' },
-  { name: 'Optical modems' },
-  { name: 'Hand tools' },
-  { name: 'Optical fiber cable' },
-  { name: 'Rectifier modules & racks' },
-  { name: 'ATS panels' },
-  { name: 'Splice-machine consumables' },
-  { name: 'Duct rod' },
-  { name: 'DC aircon' },
-  { name: 'Gensets' },
-  { name: 'CCTV' },
-  { name: 'Networking cable' },
-  { name: 'Optical power monitors' },
-  { name: 'DCDB / ACDB' },
-  { name: 'Multimeters & clamp meters' },
-  { name: 'ODF rack mounts', tag: '48 / 96 / 144 fiber' },
+  { name: 'SFPs', img: '/images/supply/sfps.jpg' },
+  { name: 'SPDs', tag: 'surge protection', img: '/images/supply/spds.jpg' },
+  { name: 'OTDR', img: '/images/supply/otdr.jpg' },
+  { name: 'Patch cords', img: '/images/supply/patch-cords.jpg' },
+  { name: 'Optical modems', img: '/images/supply/optical-modems.jpg' },
+  { name: 'Hand tools', img: '/images/supply/hand-tools.jpg' },
+  { name: 'Optical fiber cable', img: '/images/supply/optical-fiber-cable.jpg' },
+  { name: 'Rectifier modules & racks', img: '/images/supply/rectifier-modules.jpg' },
+  { name: 'ATS panels', img: '/images/supply/ats-panels.jpg' },
+  { name: 'Splice-machine consumables', img: '/images/supply/splice-consumables.jpg' },
+  { name: 'Duct rod', img: '/images/supply/duct-rod.jpg' },
+  { name: 'DC aircon', img: '/images/supply/dc-aircon.jpg' },
+  { name: 'Gensets', img: '/images/supply/gensets.jpg' },
+  { name: 'CCTV', img: '/images/supply/cctv.jpg' },
+  { name: 'Networking cable', img: '/images/supply/networking-cable.jpg' },
+  { name: 'Optical power monitors', img: '/images/supply/optical-power-monitors.jpg' },
+  { name: 'DCDB / ACDB', img: '/images/supply/dcdb-acdb.jpg' },
+  { name: 'Multimeters & clamp meters', img: '/images/supply/multimeters.jpg' },
+  { name: 'ODF rack mounts', tag: '48 / 96 / 144 fiber', img: '/images/supply/odf-rack-mounts.jpg' },
 ]
 
+// Warehouse inventory lines. Images reuse the same category photos as the
+// supply catalog (src/pages/Services) — replace with real product shots.
 export const supplies = [
-  { name: 'Delta ESR 48/40', tag: 'rectifier' },
-  { name: 'Huawei R4850G2', tag: 'rectifier module' },
-  { name: 'Eltek 48/3000', tag: 'rectifier' },
-  { name: 'Optic modems' },
-  { name: 'SolarMax & Inverex solar inverters' },
-  { name: 'ATS panel' },
-  { name: 'OTDR 1310' },
-  { name: 'DC aircon' },
-  { name: 'Optical power meter' },
-  { name: 'Emerson R48 2900U', tag: 'rectifier' },
-  { name: 'ZXD 2400', tag: 'rectifier module' },
-  { name: 'Nera ODU / IDU', tag: 'microwave' },
-  { name: 'Surge protection devices' },
+  { name: 'Delta ESR 48/40', tag: 'rectifier', img: '/images/supply/rectifier-modules.jpg' },
+  { name: 'Huawei R4850G2', tag: 'rectifier module', img: '/images/supply/rectifier-modules.jpg' },
+  { name: 'Eltek 48/3000', tag: 'rectifier', img: '/images/supply/rectifier-modules.jpg' },
+  { name: 'Optic modems', img: '/images/supply/optical-modems.jpg' },
+  { name: 'SolarMax & Inverex solar inverters', img: '/images/supply/gensets.jpg' },
+  { name: 'ATS panel', img: '/images/supply/ats-panels.jpg' },
+  { name: 'OTDR 1310', img: '/images/supply/otdr.jpg' },
+  { name: 'DC aircon', img: '/images/supply/dc-aircon.jpg' },
+  { name: 'Optical power meter', img: '/images/supply/optical-power-monitors.jpg' },
+  { name: 'Emerson R48 2900U', tag: 'rectifier', img: '/images/supply/rectifier-modules.jpg' },
+  { name: 'ZXD 2400', tag: 'rectifier module', img: '/images/supply/rectifier-modules.jpg' },
+  { name: 'Nera ODU / IDU', tag: 'microwave', img: '/images/supply/networking-cable.jpg' },
+  { name: 'Surge protection devices', img: '/images/supply/spds.jpg' },
 ]
 
 export const aboutIntro =

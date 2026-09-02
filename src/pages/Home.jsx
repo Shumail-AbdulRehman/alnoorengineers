@@ -72,11 +72,11 @@ export default function Home() {
 
       {/* Leadership */}
       <section className="border-b border-line">
-        <div className="mx-auto max-w-6xl px-4 py-16 text-center sm:px-6">
+        <div className="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6">
           <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl">Leadership</h2>
-          <div className="mt-10 flex flex-wrap justify-center gap-10 md:gap-14">
-            {leadership.map((person) => (
-              <LeadershipBadge key={person.name} person={person} />
+          <div className="mt-12 space-y-16 md:space-y-20">
+            {leadership.map((person, i) => (
+              <LeadershipBadge key={person.name} person={person} flip={i % 2 === 1} />
             ))}
           </div>
         </div>
