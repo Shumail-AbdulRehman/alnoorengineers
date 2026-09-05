@@ -39,9 +39,9 @@ export default function Hero() {
       />
       <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0e1613] to-transparent" />
 
-      <div className="relative mx-auto flex min-h-[88dvh] max-w-6xl flex-col justify-center px-4 pb-24 pt-36 sm:px-6 md:pt-40">
+      <div className="relative mx-auto flex min-h-[100dvh] w-full max-w-6xl flex-col justify-center px-4 pb-24 pt-36 sm:px-6 md:pt-40">
         <div className="animate-hero-settle">
-          <p className="flex items-center gap-2.5 font-mono text-xs text-[#f4f2ea]/70">
+          <p className="flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-[#f4f2ea]/70">
             {/* status dot: pulses exactly once on load, then rests */}
             <span
               aria-hidden="true"
@@ -50,7 +50,7 @@ export default function Hero() {
             <span className="tnum">{hero.statusLine}</span>
           </p>
 
-          <h1 className="font-expanded mt-6 max-w-2xl font-display text-4xl font-extrabold leading-[1.06] tracking-tight text-[#f4f2ea] sm:text-5xl lg:text-[3.9rem]">
+          <h1 className="mt-6 max-w-2xl font-display text-4xl font-extrabold leading-[1.06] tracking-tight text-[#f4f2ea] sm:text-5xl lg:text-[3.9rem]">
             {hero.headline}
           </h1>
 

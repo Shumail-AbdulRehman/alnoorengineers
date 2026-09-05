@@ -22,7 +22,7 @@ export const visionMission = {
 
 export const stats = [
   { value: '10+', label: 'years serving telecom operators' },
-  { value: '28', label: 'equipment segments covered' },
+  { value: '33', label: 'equipment lines covered' },
   { value: '3', label: 'sectors served — GSM, PSTN, enterprise' },
   { value: '24h', label: 'response on critical repair calls' },
 ]
@@ -110,52 +110,61 @@ export const repairServices = [
   { name: 'ZTE power & environment supervisory' },
 ]
 
-// Supply catalog images live in /public/images/supply/. Sourced from Openverse
-// (CC0 / public domain unless credited below — CC-BY requires keeping the credit):
-//   gensets.jpg          "Early industrial generator" by quinet (CC-BY) — flickr.com/photos/91994044@N00/24859385890
-//   ats-panels.jpg       "Electrical switchgear" by David Jones (CC-BY) — flickr.com/photos/45457437@N00/36083223894
-//   spds.jpg             "Outlet panels, converters, power strips" by AstroSamantha (CC-BY) — flickr.com/photos/65541944@N07/6250035530
-//   duct-rod.jpg         "Guiding New Fiber from Reel Truck" by Tessa Bury (CC-BY) — commons.wikimedia.org?curid=184601539
-//   multimeters.jpg      "Voltage-Testing Digital-Multimeter" by Emilian Robert Vicol (CC-BY) — commons.wikimedia.org?curid=38382862
-export const supplyServices = [
-  { name: 'SFPs', img: '/images/supply/sfps.jpg' },
-  { name: 'SPDs', tag: 'surge protection', img: '/images/supply/spds.jpg' },
-  { name: 'OTDR', img: '/images/supply/otdr.jpg' },
-  { name: 'Patch cords', img: '/images/supply/patch-cords.jpg' },
-  { name: 'Optical modems', img: '/images/supply/optical-modems.jpg' },
-  { name: 'Hand tools', img: '/images/supply/hand-tools.jpg' },
-  { name: 'Optical fiber cable', img: '/images/supply/optical-fiber-cable.jpg' },
-  { name: 'Rectifier modules & racks', img: '/images/supply/rectifier-modules.jpg' },
-  { name: 'ATS panels', img: '/images/supply/ats-panels.jpg' },
-  { name: 'Splice-machine consumables', img: '/images/supply/splice-consumables.jpg' },
-  { name: 'Duct rod', img: '/images/supply/duct-rod.jpg' },
-  { name: 'DC aircon', img: '/images/supply/dc-aircon.jpg' },
-  { name: 'Gensets', img: '/images/supply/gensets.jpg' },
-  { name: 'CCTV', img: '/images/supply/cctv.jpg' },
-  { name: 'Networking cable', img: '/images/supply/networking-cable.jpg' },
-  { name: 'Optical power monitors', img: '/images/supply/optical-power-monitors.jpg' },
-  { name: 'DCDB / ACDB', img: '/images/supply/dcdb-acdb.jpg' },
-  { name: 'Multimeters & clamp meters', img: '/images/supply/multimeters.jpg' },
-  { name: 'ODF rack mounts', tag: '48 / 96 / 144 fiber', img: '/images/supply/odf-rack-mounts.jpg' },
+// Supply catalog, organized per the Guangyan 2024 catalogue (Shenzhen Guangyan
+// Network Electronic Co., Ltd) that Al Noor stocks and sources from. Product
+// photos are cropped from that catalogue (provided by the client).
+// Images live in /public/images/supply/.
+export const supplyCategories = [
+  {
+    title: 'Fusion Splicers',
+    items: [
+      { name: 'K3 / K3S Fusion Splicer', tag: 'SM / MM / NZDS', img: '/images/supply/splicer-k3.jpg' },
+      { name: 'K5 Fusion Splicer', tag: 'touch screen', img: '/images/supply/splicer-k5.jpg' },
+      { name: 'M5 Fusion Splicer', tag: '4.3″ touch', img: '/images/supply/splicer-m5.jpg' },
+    ],
+  },
+  {
+    title: 'OTDR & Fiber Testers',
+    items: [
+      { name: '1000 Series Touch-Screen OTDR', tag: '1310 / 1550 nm', img: '/images/supply/otdr-1000.jpg' },
+      { name: 'MTO-50 / MTO-51 OTDR', tag: 'up to 100 km', img: '/images/supply/otdr-mto50.jpg' },
+      { name: 'G8 Optical Power Meter', tag: '850–1625 nm', img: '/images/supply/power-meter-g8.jpg' },
+      { name: 'Y8 All-in-1 Multifunction Tester', tag: '6-in-1', img: '/images/supply/multi-tester-y8.jpg' },
+      { name: 'G7 / G10 / G11 Mini Power Meters', tag: 'pen style', img: '/images/supply/mini-power-meters.jpg' },
+      { name: 'HT-XX / B5 / B3S Visual Fault Locator', tag: '5–30 mW', img: '/images/supply/vfl-pens.jpg' },
+      { name: 'A-35 / A-36 / A-40 Fiber Identifier', tag: 'live fiber', img: '/images/supply/fiber-identifier.jpg' },
+      { name: 'PON Power Meter', tag: '1310 / 1490 / 1550 nm', img: '/images/supply/pon-meter.jpg' },
+    ],
+  },
+  {
+    title: 'CCTV & Cable Testers',
+    items: [
+      { name: 'HD-2900 CCTV Security Tester', tag: '4.3″ TFT', img: '/images/supply/cctv-hd2900.jpg' },
+      { name: 'IPCX-ACTI CCTV Tester', tag: '7″ touch', img: '/images/supply/cctv-ipcx-acti.jpg' },
+      { name: 'MT-6800 CCTV Tester & OTDR', tag: '1310 / 1550 nm', img: '/images/supply/cctv-otdr-mt6800.jpg' },
+      { name: 'LT-1200 Cable Tester Tracker', tag: 'PoE', img: '/images/supply/cable-tester-lt1200.jpg' },
+      { name: 'ET618 Cable Tracker & Multimeter', tag: '2-in-1', img: '/images/supply/tracker-multimeter-et618.jpg' },
+      { name: 'ET626 / ET628 Cable Tester', tag: 'VFL / PoE / NCV', img: '/images/supply/cable-tester-et626.jpg' },
+      { name: 'M100 Non-Contact Voltage Detector', tag: '12–1000 V AC', img: '/images/supply/ncv-detector-m100.jpg' },
+      { name: 'YT-811 Pen Multimeter', tag: 'CAT III 600 V', img: '/images/supply/multimeter-yt811.jpg' },
+    ],
+  },
+  {
+    title: 'Fiber Tools & FTTH Toolkits',
+    items: [
+      { name: 'FC-6S Fiber Cleaver', img: '/images/supply/cleaver-fc6s.jpg' },
+      { name: 'Miller Fiber Stripper', tag: 'CFS series', img: '/images/supply/fiber-stripper.jpg' },
+      { name: 'KT-216B FTTH Tool Kit', img: '/images/supply/ftth-toolkit-kt216b.jpg' },
+      { name: 'FTTH-K1 FTTH Tool Kit', img: '/images/supply/ftth-toolkit-k1.jpg' },
+    ],
+  },
 ]
 
-// Warehouse inventory lines. Images reuse the same category photos as the
-// supply catalog (src/pages/Services) — replace with real product shots.
-export const supplies = [
-  { name: 'Delta ESR 48/40', tag: 'rectifier', img: '/images/supply/rectifier-modules.jpg' },
-  { name: 'Huawei R4850G2', tag: 'rectifier module', img: '/images/supply/rectifier-modules.jpg' },
-  { name: 'Eltek 48/3000', tag: 'rectifier', img: '/images/supply/rectifier-modules.jpg' },
-  { name: 'Optic modems', img: '/images/supply/optical-modems.jpg' },
-  { name: 'SolarMax & Inverex solar inverters', img: '/images/supply/gensets.jpg' },
-  { name: 'ATS panel', img: '/images/supply/ats-panels.jpg' },
-  { name: 'OTDR 1310', img: '/images/supply/otdr.jpg' },
-  { name: 'DC aircon', img: '/images/supply/dc-aircon.jpg' },
-  { name: 'Optical power meter', img: '/images/supply/optical-power-monitors.jpg' },
-  { name: 'Emerson R48 2900U', tag: 'rectifier', img: '/images/supply/rectifier-modules.jpg' },
-  { name: 'ZXD 2400', tag: 'rectifier module', img: '/images/supply/rectifier-modules.jpg' },
-  { name: 'Nera ODU / IDU', tag: 'microwave', img: '/images/supply/networking-cable.jpg' },
-  { name: 'Surge protection devices', img: '/images/supply/spds.jpg' },
-]
+// Flat list of every stocked line — used for counts and preview strips.
+export const supplyServices = supplyCategories.flatMap((category) => category.items)
+
+// About-page inventory preview: the first lines of the catalog.
+export const supplies = supplyServices.slice(0, 6)
 
 export const aboutIntro =
   'Al Noor Engineers (Pvt.) Ltd. is a Pakistan-based B2B firm with more than ten years in ' +

@@ -48,7 +48,7 @@ export default function Contact() {
               </li>
               <li className="flex items-center justify-between gap-4 py-4">
                 <span className="text-sm text-dim">Hours</span>
-                <span className="tnum font-mono text-sm text-label">{SITE.hours}</span>
+                <span className="text-sm font-medium text-label">{SITE.hours}</span>
               </li>
             </ul>
           </div>

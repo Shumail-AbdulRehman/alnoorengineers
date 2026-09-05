@@ -21,7 +21,7 @@ export default function QuoteForm() {
   }
 
   const inputClass =
-    'w-full border border-line bg-rack px-4 py-3 text-sm text-label placeholder:text-dim/60 transition-colors focus:border-amber'
+    'w-full border border-amber/40 bg-rack px-4 py-3 text-sm text-label placeholder:text-dim/60 transition-colors duration-150 focus:border-amber focus:bg-amber/5'
 
   return (
     <form onSubmit={submit} className="border border-line bg-panel">
@@ -32,7 +32,7 @@ export default function QuoteForm() {
 
       <div className="space-y-5 p-5 sm:p-6">
         <div>
-          <label htmlFor="q-company" className="mb-2 block text-sm text-dim">Company name</label>
+          <label htmlFor="q-company" className="mb-2 block text-sm font-medium text-amber-strong">Company name</label>
           <input
             id="q-company"
             name="company"
@@ -46,7 +46,7 @@ export default function QuoteForm() {
         </div>
 
         <div>
-          <label htmlFor="q-segment" className="mb-2 block text-sm text-dim">Equipment / segment</label>
+          <label htmlFor="q-segment" className="mb-2 block text-sm font-medium text-amber-strong">Equipment / segment</label>
           <input
             id="q-segment"
             name="segment"
@@ -60,7 +60,7 @@ export default function QuoteForm() {
         </div>
 
         <div>
-          <label htmlFor="q-message" className="mb-2 block text-sm text-dim">Message</label>
+          <label htmlFor="q-message" className="mb-2 block text-sm font-medium text-amber-strong">Message</label>
           <textarea
             id="q-message"
             name="message"

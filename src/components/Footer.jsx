@@ -1,17 +1,21 @@
 import { Link } from 'react-router-dom'
 import { SITE, whatsappLink } from '../lib/site'
+import Logo from './Logo'
 
 export default function Footer() {
   return (
     <footer className="border-t border-line bg-panel">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-4">
         <div>
-          <p className="font-display text-base font-bold">Al Noor Engineers (Pvt.) Ltd.</p>
+          <p className="flex items-center gap-2.5 font-display text-base font-bold">
+            <Logo className="h-6 w-6 shrink-0" />
+            Al Noor Engineers
+          </p>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-dim">
             {SITE.tagline}. New and refurbished equipment for GSM, PSTN and enterprise
             infrastructure across Pakistan.
           </p>
-          <p className="tnum mt-4 font-mono text-xs text-dim">{SITE.hours}</p>
+          <p className="mt-4 text-xs font-medium text-dim">{SITE.hours}</p>
         </div>
 
         <div>
@@ -54,7 +58,7 @@ export default function Footer() {
       <div className="border-t border-line">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-4 sm:px-6">
           <p className="text-xs text-dim">© {new Date().getFullYear()} {SITE.name}</p>
-          <p className="tnum font-mono text-xs text-dim">Repair · Maintenance · Supply</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-dim">Repair · Maintenance · Supply</p>
         </div>
       </div>
     </footer>

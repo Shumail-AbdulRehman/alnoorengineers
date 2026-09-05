@@ -21,15 +21,16 @@
 }
 
 /*
- * Light mode — the equipment-label stock becomes the background.
- * Amber keeps its LED value for indicators/buttons/selection in both themes;
- * amber-strong darkens for text-on-light contrast. Dark remains the default.
+ * Light mode — clean white page background; panels stay a hair darker so
+ * cards and chips remain visible. Amber keeps its LED value for
+ * indicators/buttons/selection in both themes; amber-strong darkens for
+ * text-on-light contrast. Dark remains the default.
  */
 :root.light {
-  --color-rack: #f4f2ea;
+  --color-rack: #ffffff; /* page background */
   --color-label: #1a241e;
-  --color-panel: #eae7db;
-  --color-line: #d6d2c3;
+  --color-panel: #ffffff; /* cards match the page; borders define them */
+  --color-line: #e2dfd6; /* hairlines on white */
   --color-dim: #57655b;
   --color-amber-strong: #96650f;
   --color-teal: #356051;
@@ -73,11 +74,6 @@
 
 @utility tnum {
   font-variant-numeric: tabular-nums;
-}
-
-/* Expanded-width headlines — Archivo is a variable font with a width axis. */
-@utility font-expanded {
-  font-stretch: 125%;
 }
 
 @media (prefers-reduced-motion: reduce) {

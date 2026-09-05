@@ -15,7 +15,7 @@ export default function SupplyCatalog({ items }) {
           </div>
           <div className="flex items-center justify-between gap-3 px-4 py-3">
             <span className="text-base font-bold text-label">{item.name}</span>
-            {item.tag && <span className="tnum font-mono text-[11px] text-dim">{item.tag}</span>}
+            {item.tag && <span className="text-xs font-semibold uppercase tracking-wide text-amber">{item.tag}</span>}
           </div>
         </li>
       ))}

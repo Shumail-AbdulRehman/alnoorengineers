@@ -16,7 +16,7 @@ export default function PageBanner({ image, alt = '', title, lede }) {
       />
 
       <div className="relative mx-auto max-w-6xl px-4 pb-16 pt-36 sm:px-6 md:pb-20 md:pt-44">
-        <h1 className="font-expanded max-w-3xl font-display text-4xl font-extrabold leading-[1.06] tracking-tight text-[#f4f2ea] sm:text-5xl">
+        <h1 className="max-w-3xl font-display text-4xl font-extrabold leading-[1.06] tracking-tight text-[#f4f2ea] sm:text-5xl">
           {title}
         </h1>
         {lede && <p className="mt-6 max-w-[68ch] text-lg leading-relaxed text-[#f4f2ea]/75">{lede}</p>}

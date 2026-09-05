@@ -1,6 +1,7 @@
 import { Link, NavLink } from 'react-router-dom'
 import { SITE, whatsappLink } from '../lib/site'
 import ThemeToggle from './ThemeToggle'
+import Logo from './Logo'
 
 const links = [
   { to: '/', label: 'Home' },
@@ -14,10 +15,7 @@ export default function Nav() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-rack/95 backdrop-blur-sm">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link to="/" className="flex min-w-0 items-center gap-2.5" aria-label="Al Noor Engineers — home">
-          <span className="relative flex h-3 w-3 shrink-0" aria-hidden="true">
-            <span className="absolute inline-flex h-full w-full rounded-full bg-amber opacity-60" />
-            <span className="relative inline-flex h-3 w-3 rounded-full bg-amber" />
-          </span>
+          <Logo className="h-7 w-7 shrink-0" />
           <span className="truncate font-display text-base font-bold tracking-tight">
             Al Noor <span className="text-dim font-medium">Engineers</span>
           </span>
@@ -30,8 +28,10 @@ export default function Nav() {
               to={to}
               end={to === '/'}
               className={({ isActive }) =>
-                `text-sm transition-colors duration-150 ${
-                  isActive ? 'text-amber-strong' : 'text-dim hover:text-label'
+                `border px-3 py-1.5 text-sm transition-colors duration-150 ${
+                  isActive
+                    ? 'border-transparent text-amber-strong'
+                    : 'border-transparent text-dim hover:border-amber hover:bg-amber hover:text-black'
                 }`
               }
             >
@@ -62,8 +62,10 @@ export default function Nav() {
               to={to}
               end={to === '/'}
               className={({ isActive }) =>
-                `py-2.5 text-sm transition-colors duration-150 ${
-                  isActive ? 'text-amber-strong' : 'text-dim hover:text-label'
+                `border px-3 py-2.5 text-sm transition-colors duration-150 ${
+                  isActive
+                    ? 'border-transparent text-amber-strong'
+                    : 'border-transparent text-dim hover:border-amber hover:bg-amber hover:text-black'
                 }`
               }
             >
