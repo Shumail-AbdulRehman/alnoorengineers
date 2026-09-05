@@ -3,7 +3,7 @@
 export const hero = {
   // statusLine: 'Repair bay operational',
   headline:
-    'Telecom equipment repair, maintenance and supply — done to operator standard.',
+    'Telecom equipment repair, maintenance and supply, done to operator standard.',
   lede:
     'For over a decade we have repaired, maintained and supplied new and refurbished ' +
     'telecom equipment for leading GSM and PSTN operators, vendors and enterprise ' +
@@ -12,7 +12,7 @@ export const hero = {
 
 export const visionMission = {
   vision:
-    'To be the leading telecom services provider in Pakistan — recognized for technical ' +
+    'To be the leading telecom services provider in Pakistan, recognized for technical ' +
     'depth, reliability and an ethically run operation that operators can depend on.',
   mission:
     'We serve and manage network operations within operator budgets, match OEM quality of ' +
@@ -23,70 +23,67 @@ export const visionMission = {
 export const stats = [
   { value: '10+', label: 'years serving telecom operators' },
   { value: '33', label: 'equipment lines covered' },
-  { value: '3', label: 'sectors served — GSM, PSTN, enterprise' },
+  { value: '3', label: 'sectors served: GSM, PSTN, enterprise' },
   { value: '24h', label: 'response on critical repair calls' },
 ]
 
 export const clients = ['Nokia', 'Jazz', 'Telenor Pakistan', 'Zong', 'Ufone', 'PTCL']
 
-// Portraits are STOCK PHOTOS for layout preview only — replace image files in
-// /public/images/leaders/ with real photos of the actual people before launch.
+// Leadership team — names, roles and experience per the company profile.
 export const leadership = [
   {
-    initials: 'MA',
-    name: 'Mr. Asif',
+    initials: 'SJ',
+    name: 'Sana Javed',
     role: 'Chief Executive Officer',
-    credential: 'SKS · Global One · Green Base Solutions',
-    image: '/images/leaders/mr-asif.jpg',
+    credential: 'Nexora Solutions · Vertex Technologies',
+    image: '/images/leaders/sana-javed.jpg',
     bio:
-      'Built his career across SKS, Global One and Green Base Solutions before founding ' +
-      'Al Noor Engineers — a decade-plus of hands-on telecom operations leadership.',
+      'A visionary, results-driven CEO focused on innovation, strong teams and ' +
+      'sustainable growth, turning strategy into long-term impact.',
     fullBio:
-      'Mr. Asif founded Al Noor Engineers after a career spent inside the operator and vendor ' +
-      'ecosystem — SKS, Global One and Green Base Solutions — where he led field operations, ' +
-      'repair programs and equipment supply for GSM and PSTN networks. He built Al Noor ' +
-      'Engineers around a simple standard: do the repair properly, document it, and stand ' +
-      'behind it. That standard still governs how every unit moves through the lab.',
+      'Sana Javed leads Al Noor Engineers as Chief Executive Officer. Before taking the helm ' +
+      'she was CEO at Nexora Solutions (2021–2025), where she led business strategy, teams and ' +
+      'company operations, and earlier Business Development Manager at Vertex Technologies ' +
+      '(2018–2021), managing client relationships and daily operations. Her focus at Al Noor: ' +
+      'innovation, strong teams and sustainable growth: strategy turned into long-term impact.',
   },
   {
-    initials: 'MAA',
-    name: 'Col (Retd) Muhammad Afzal Ahsan, SI(M)',
-    role: 'Chief Operating Officer / Chief Technology Officer',
-    credential: 'Pak Army PASCOMS · Safe City projects · USF Gilgit-Baltistan',
-    image: '/images/leaders/col-afzal-ahsan.jpg',
+    initials: 'HA',
+    name: 'Hamza Ali Arif',
+    role: 'Chief Operating Officer',
+    credential: 'AHVISION Telecom · Al Noor Engineers',
+    image: '/images/leaders/hamza-ali-arif.jpg',
     bio:
-      'Retired Pakistan Army Colonel from the PASCOMS corps; led safe-city and USF ' +
-      'Gilgit-Baltistan infrastructure programs before joining Al Noor Engineers.',
+      'An operations leader who built his career from the field up, now pairing hands-on ' +
+      'discipline with board-level oversight.',
     fullBio:
-      'Col (Retd) Muhammad Afzal Ahsan, SI(M), served in the Pakistan Army’s PASCOMS ' +
-      'defence-communications arm, where he planned, built and maintained strategic ' +
-      'communications infrastructure under field conditions. After retiring he led safe-city ' +
-      'surveillance and network projects and USF-funded deployments in Gilgit-Baltistan. At ' +
-      'Al Noor Engineers he runs operations and technical direction — the same discipline of ' +
-      'maintenance schedules, fault isolation and documented acceptance he applied in service.',
+      'Hamza Ali Arif serves as Chief Operating Officer and Non-Executive Director at Al Noor ' +
+      'Engineers, providing operational leadership and board oversight as the company scales. ' +
+      'Before joining, he was General Manager, Operations at AHVISION Telecom (2022–2025), ' +
+      'where he ran installation and field supervision nationwide. He brings the same hands-on ' +
+      'discipline to every repair and supply engagement.',
   },
-  // DUMMY ENTRY — placeholder so the three-person layout can be reviewed.
-  // Replace name, credentials, bio and photo with the real person, or delete.
   {
-    initials: 'BH',
-    name: 'Engr. Bilal Hussain',
-    role: 'Head of Repair Lab',
-    credential: 'Nokia field ops · 12 yrs on the bench',
-    image: '/images/leaders/dummy.jpg',
+    initials: 'MA',
+    name: 'Muhammad Azam Yaqoob',
+    role: 'Chief Financial Officer',
+    credential: 'Soneri Bank · JS Bank · Bank Islami',
+    image: '/images/leaders/muhammad-azam-yaqoob.jpg',
     bio:
-      'Runs the repair bench day to day — fault isolation, component-level rework and ' +
-      'load testing across rectifier, RF and transport units before they ship back to site.',
+      'A banking professional with over a decade in corporate banking, bringing audit-ready, ' +
+      'compliance-first discipline to the books.',
     fullBio:
-      'Engr. Bilal Hussain has spent twelve years on telecom repair benches, starting with ' +
-      'Nokia field operations and moving through rectifier plants, BTS subsystems and optical ' +
-      'test gear. At Al Noor Engineers he owns bench throughput: triage, fault isolation, ' +
-      'component-level rework and the load-test records that go out with every repaired unit. ' +
-      'His rule on documentation is simple — if it isn’t written down, it didn’t happen.',
+      'Muhammad Azam Yaqoob directs Al Noor Engineers’ financial operations, banking ' +
+      'relationships and fiscal controls as Chief Financial Officer. He spent eight years at ' +
+      'JS Bank Limited (2016–2024) as Relationship Manager and Floor Manager, handling ' +
+      'corporate banking and client relationships, after starting his career in retail banking ' +
+      'at Bank Islami, and now brings that audit-ready, compliance-first discipline to the ' +
+      'way the company runs its books.',
   },
 ]
 
 export const objectives = [
-  'Serve and manage network operations within the operator’s budget — no surprise spend, no padded scope.',
+  'Serve and manage network operations within the operator’s budget. No surprise spend, no padded scope.',
   'Match OEM quality of service on every repair and maintenance engagement, at a fraction of OEM turnaround.',
   'Sustain a standing commitment to repair and supply excellence across all equipment segments we cover.',
 ]
@@ -168,6 +165,6 @@ export const supplies = supplyServices.slice(0, 6)
 
 export const aboutIntro =
   'Al Noor Engineers (Pvt.) Ltd. is a Pakistan-based B2B firm with more than ten years in ' +
-  'telecom equipment repair, maintenance and supply — new and refurbished. Our clients are ' +
+  'telecom equipment repair, maintenance and supply, new and refurbished. Our clients are ' +
   'GSM and PSTN operators, telecom vendors and enterprise infrastructure teams. We repair to ' +
   'operator standard, document the work, and stand behind every unit that leaves the lab.'

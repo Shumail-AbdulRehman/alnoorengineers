@@ -1,8 +1,9 @@
 import { clients } from '../data/content'
 
-// Client logos seated on equipment-label plates — off-white chips so the brand
-// colors read correctly against the dark rack background. Logos sourced from
-// each operator's own site; hover lifts the plate.
+// Client logos on transparent chips — the brand marks sit directly on the
+// page background in both themes. Logos sourced from each operator's own
+// site. PTCL's mark is dark green on transparent, so dark mode lifts it
+// with a brightness filter (the .logo-lift rule in index.css).
 const LOGO_FILES = {
   // Nokia: '/images/logos/nokia.svg',
   Jazz: '/images/logos/jazz.png',
@@ -11,6 +12,8 @@ const LOGO_FILES = {
   Ufone: '/images/logos/ufone.png',
   PTCL: '/images/logos/ptcl.svg',
 }
+
+const DARK_MARKS = new Set(['PTCL'])
 
 export default function LogoRail() {
   return (
@@ -22,12 +25,12 @@ export default function LogoRail() {
             const src = LOGO_FILES[client]
             if (!src) return null
             return (
-              <li key={client}>
+              <li key={client} className={DARK_MARKS.has(client) ? 'logo-lift' : undefined}>
                 <div
                   title={client}
-                  className="flex h-12 items-center border border-line bg-[#f4f2ea] px-4 transition-all duration-150 hover:-translate-y-0.5 hover:border-amber"
+                  className="flex h-16 items-center px-4 transition-all duration-150 hover:-translate-y-0.5"
                 >
-                  <img src={src} alt={`${client} logo`} className="h-6 w-auto object-contain" loading="lazy" />
+                  <img src={src} alt={`${client} logo`} className="h-9 w-auto object-contain" loading="lazy" />
                 </div>
               </li>
             )

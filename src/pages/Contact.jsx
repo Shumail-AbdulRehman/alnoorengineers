@@ -1,5 +1,6 @@
 import PageBanner from '../components/PageBanner'
 import QuoteForm from '../components/QuoteForm'
+import Reveal from '../components/Reveal'
 import { SITE, whatsappLink } from '../lib/site'
 
 export default function Contact() {
@@ -9,14 +10,15 @@ export default function Contact() {
         image="/images/banner-contact.jpg"
         alt="Numbered ports on a patch panel with patched network cabling"
         title="Fast channel in, fast answer out"
-        lede="WhatsApp or phone is the quickest route — you reach the people who run the lab,
+        lede="WhatsApp or phone is the quickest route: you reach the people who run the lab,
             not a ticket queue. Prefer writing? Use the short form and we pick it up there."
       />
 
       <section className="border-b border-line">
-        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_1.2fr]">
+        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-20 sm:px-6 md:py-24 lg:grid-cols-[1fr_1.2fr]">
           {/* Direct channels */}
-          <div>
+          <Reveal>
+            <div>
             <h2 className="font-display text-xl font-bold tracking-tight">Direct</h2>
             <ul className="mt-6 divide-y divide-line border-y border-line">
               <li className="flex items-center justify-between gap-4 py-4">
@@ -52,9 +54,12 @@ export default function Contact() {
               </li>
             </ul>
           </div>
+          </Reveal>
 
           {/* Quote form */}
-          <QuoteForm />
+          <Reveal delay={120}>
+            <QuoteForm />
+          </Reveal>
         </div>
       </section>
     </>

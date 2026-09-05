@@ -3,8 +3,6 @@ import { useState } from 'react'
 // Leadership profile — borderless split layout: a large portrait on one side,
 // identity and bio on the other, alternating sides per person (flip prop).
 // "Show more info" expands the full bio with a smooth height animation.
-// Portraits currently use stock photos as stand-ins (see content.js) — swap the
-// files in /public/images/leaders/ for real photos before launch.
 
 export default function LeadershipBadge({ person, flip = false }) {
   const [expanded, setExpanded] = useState(false)
@@ -18,7 +16,7 @@ export default function LeadershipBadge({ person, flip = false }) {
       <img
         src={person.image}
         alt={`Portrait of ${person.name}`}
-        className="h-64 w-full border border-teal/60 object-cover object-top sm:h-72 md:h-80 md:w-72 lg:w-80"
+        className="h-64 w-full border border-line object-cover object-top sm:h-72 md:h-80 md:w-72 lg:w-80"
         loading="lazy"
         width="640"
         height="800"

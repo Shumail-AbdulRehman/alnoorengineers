@@ -14,7 +14,7 @@ export default function Nav() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-rack/95 backdrop-blur-sm">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
-        <Link to="/" className="flex min-w-0 items-center gap-2.5" aria-label="Al Noor Engineers — home">
+        <Link to="/" className="flex min-w-0 items-center gap-2.5" aria-label="Al Noor Engineers home">
           <Logo className="h-7 w-7 shrink-0" />
           <span className="truncate font-display text-base font-bold tracking-tight">
             Al Noor <span className="text-dim font-medium">Engineers</span>

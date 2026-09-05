@@ -1,19 +1,22 @@
 @import 'tailwindcss';
 
 @theme {
-  /* Al Noor Engineers — network operations room palette */
-  --color-rack: #0e1613; /* deep rack-room charcoal */
+  /* Al Noor Engineers — network operations room palette.
+     Lifted darks: background and panel sit far enough apart that cards
+     read as surfaces, not holes in a void. */
+  --color-rack: #131a16; /* lifted rack-room charcoal */
+  --color-panel: #1b241f; /* panel surface, clearly above the page */
+  --color-panel2: #242f29; /* nested surface — chips, wells, table rows */
   --color-label: #f4f2ea; /* warm off-white, equipment-labelling stock */
-  --color-panel: #161f1b; /* panel surface, one step up */
   --color-amber: #e8a33d; /* diagnostic amber — status LEDs, primary CTAs */
-  --color-teal: #3f6b5c; /* muted signal-teal — secondary accent */
+  --color-teal: #4a7d6a; /* muted signal-teal — secondary accent */
 
-  --color-line: #243029; /* hairline between rack units */
-  --color-dim: #9aa79e; /* muted body copy on charcoal */
+  --color-line: #2c3831; /* hairline between rack units */
+  --color-dim: #aebcb1; /* body copy on charcoal — raised for readability */
   --color-amber-strong: #e8a33d; /* amber tuned for text on the current background */
 
-  --font-display: 'Archivo', 'Arial Narrow', system-ui, sans-serif;
-  --font-sans: 'Instrument Sans', system-ui, sans-serif;
+  --font-display: 'Montserrat', 'Arial Narrow', system-ui, sans-serif;
+  --font-sans: 'Lato', system-ui, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
 
   --animate-status-pulse: status-pulse 1.6s ease-out 1;
@@ -21,17 +24,18 @@
 }
 
 /*
- * Light mode — clean white page background; panels stay a hair darker so
- * cards and chips remain visible. Amber keeps its LED value for
- * indicators/buttons/selection in both themes; amber-strong darkens for
- * text-on-light contrast. Dark remains the default.
+ * Light mode — warm paper background so white panels lift off it.
+ * Amber keeps its LED value for indicators/buttons/selection in both
+ * themes; amber-strong darkens for text-on-light contrast.
+ * Dark remains the default.
  */
 :root.light {
-  --color-rack: #ffffff; /* page background */
+  --color-rack: #faf9f4; /* warm paper, not clinical white */
   --color-label: #1a241e;
-  --color-panel: #ffffff; /* cards match the page; borders define them */
-  --color-line: #e2dfd6; /* hairlines on white */
-  --color-dim: #57655b;
+  --color-panel: #ffffff; /* cards lift off the warm page */
+  --color-panel2: #f1efe7; /* nested surface */
+  --color-line: #e3e0d6;
+  --color-dim: #5c685f;
   --color-amber-strong: #96650f;
   --color-teal: #356051;
 }
@@ -61,6 +65,26 @@
     @apply bg-rack text-label font-sans antialiased;
   }
 
+  /* film grain — fixed, pointer-events-none, breaks the flat digital look */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 80;
+    pointer-events: none;
+    opacity: 0.045;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/></svg>");
+  }
+  :root.light body::after {
+    opacity: 0.035;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
   ::selection {
     background: var(--color-amber);
     color: var(--color-rack);
@@ -74,6 +98,34 @@
 
 @utility tnum {
   font-variant-numeric: tabular-nums;
+}
+
+/* hides scrollbars on snap-scroll rails while keeping them scrollable */
+@utility scrollbar-hide {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* dark mode only: lift dark-on-transparent brand marks (e.g. PTCL) so they
+   stay legible against the charcoal background */
+:root:not(.light) .logo-lift img {
+  filter: brightness(2.1) saturate(1.1);
+}
+
+/* Scroll-entry reveal — elements fade up with a heavy spring curve as they
+   enter the viewport (driven by the Reveal component's IntersectionObserver). */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.8s cubic-bezier(0.32, 0.72, 0, 1),
+    transform 0.8s cubic-bezier(0.32, 0.72, 0, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media (prefers-reduced-motion: reduce) {

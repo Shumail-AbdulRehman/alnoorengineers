@@ -11,7 +11,7 @@ export default function QuoteForm() {
   const submit = (e) => {
     e.preventDefault()
     const text = [
-      'Quote request — Al Noor Engineers website',
+      'Quote request: Al Noor Engineers website',
       `Company: ${form.company}`,
       `Equipment / segment: ${form.segment}`,
       '',
