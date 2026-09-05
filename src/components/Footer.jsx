@@ -51,7 +51,7 @@ export default function Footer() {
             <li><Link className="transition-colors hover:text-amber-strong" to="/about">About</Link></li>
             <li><Link className="transition-colors hover:text-amber-strong" to="/services">Services</Link></li>
             <li><Link className="transition-colors hover:text-amber-strong" to="/contact">Contact</Link></li>
-            <li>
+            {/* <li>
               <a
                 className="inline-flex items-center gap-1.5 transition-colors hover:text-amber-strong"
                 href="/Al_Noor_Engineers_Company_Profile.pdf"
@@ -65,7 +65,7 @@ export default function Footer() {
                 </svg>
                 Company profile (PDF)
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>

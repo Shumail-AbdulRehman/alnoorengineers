@@ -16,7 +16,11 @@ export default function LeadershipBadge({ person, flip = false }) {
       <img
         src={person.image}
         alt={`Portrait of ${person.name}`}
-        className="h-64 w-full border border-line object-cover object-top sm:h-72 md:h-80 md:w-72 lg:w-80"
+        className={
+          person.contain
+            ? 'mx-auto h-80 w-auto border border-line object-contain md:h-96'
+            : 'h-64 w-full border border-line object-cover object-top sm:h-72 md:h-80 md:w-72 lg:w-80'
+        }
         loading="lazy"
         width="640"
         height="800"

@@ -32,8 +32,8 @@ export const clients = ['Nokia', 'Jazz', 'Telenor Pakistan', 'Zong', 'Ufone', 'P
 // Leadership team — names, roles and experience per the company profile.
 export const leadership = [
   {
-    initials: 'SJ',
-    name: 'Sana Javed',
+    initials: 'SM',
+    name: 'Sana Manzoor',
     role: 'Chief Executive Officer',
     credential: 'Nexora Solutions · Vertex Technologies',
     image: '/images/leaders/sana-javed.jpg',
@@ -41,7 +41,7 @@ export const leadership = [
       'A visionary, results-driven CEO focused on innovation, strong teams and ' +
       'sustainable growth, turning strategy into long-term impact.',
     fullBio:
-      'Sana Javed leads Al Noor Engineers as Chief Executive Officer. Before taking the helm ' +
+      'Sana Manzoor leads Al Noor Engineers as Chief Executive Officer. Before taking the helm ' +
       'she was CEO at Nexora Solutions (2021–2025), where she led business strategy, teams and ' +
       'company operations, and earlier Business Development Manager at Vertex Technologies ' +
       '(2018–2021), managing client relationships and daily operations. Her focus at Al Noor: ' +
@@ -53,6 +53,7 @@ export const leadership = [
     role: 'Chief Operating Officer',
     credential: 'AHVISION Telecom · Al Noor Engineers',
     image: '/images/leaders/hamza-ali-arif.jpg',
+    contain: true,
     bio:
       'An operations leader who built his career from the field up, now pairing hands-on ' +
       'discipline with board-level oversight.',

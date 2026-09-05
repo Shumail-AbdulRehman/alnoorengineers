@@ -36,33 +36,7 @@ export default function About() {
       </section>
 
       {/* Inside the lab — wide photography band */}
-      <section className="border-b border-line bg-panel">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-24">
-          <Reveal>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-strong">Inside the lab</p>
-            <h2 className="mt-3 font-display text-2xl font-bold tracking-tight sm:text-3xl">
-              Bench, bench supply, and the burn-in rack
-            </h2>
-            <p className="mt-3 max-w-[62ch] text-dim">
-              Every unit that comes in is diagnosed, repaired and run under load before it ships
-              back, with the test record attached.
-            </p>
-          </Reveal>
-          <Reveal delay={120}>
-            {/* aspect lives on the img itself — no inner frame, so no panel
-                color can peek through. Taller 4:3 crop on mobile, cinematic
-                21:9 on desktop. */}
-            <figure className="group mt-12 overflow-hidden border border-line bg-panel2">
-              <img
-                src="/images/lab/lab-board-wide.webp"
-                alt="Circuit board under inspection in the repair lab"
-                loading="lazy"
-                className="aspect-[4/3] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03] sm:aspect-[16/10] lg:aspect-[21/9]"
-              />
-            </figure>
-          </Reveal>
-        </div>
-      </section>
+      
 
       {/* Our Supplies — image catalog */}
       <section className="border-b border-line">

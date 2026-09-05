@@ -74,8 +74,8 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Supply */}
-      <section className="border-b border-line">
+      {/* Supply — id="supply" is the target of the home-page catalog button */}
+      <section id="supply" className="scroll-mt-20 border-b border-line">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-24">
           <Reveal>
             <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">

@@ -11,12 +11,19 @@ import About from './pages/About'
 import Services from './pages/Services'
 import Contact from './pages/Contact'
 
-// Scroll to top on every route change (no scroll-triggered animations elsewhere).
+// Scroll to top on every route change; honor #hash targets (e.g. the
+// home-page catalog button landing on /services#supply).
 function ScrollToTop() {
-  const { pathname } = useLocation()
+  const { pathname, hash } = useLocation()
   useEffect(() => {
+    if (hash) {
+      const t = setTimeout(() => {
+        document.querySelector(hash)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }, 60)
+      return () => clearTimeout(t)
+    }
     window.scrollTo(0, 0)
-  }, [pathname])
+  }, [pathname, hash])
   return null
 }
 

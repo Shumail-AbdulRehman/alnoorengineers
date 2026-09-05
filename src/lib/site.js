@@ -12,7 +12,7 @@ export const SITE = {
   whatsappNumber: '923180499755', // digits only, country code, no "+" or spaces
   phoneDisplay: '+92 318 0499755 · +92 313 5590486',
   phoneHref: '+923180499755',
-  email: 'sanajaved@alnoorengineers.com',
+  email: 'sanamanzoor@alnoorengineers.com',
   address: 'Rawalpindi / Islamabad, Pakistan', // placeholder — confirm street address
 
   city: 'Pakistan',

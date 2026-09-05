@@ -4,9 +4,11 @@ import LogoRail from '../components/LogoRail'
 import StatsStrip from '../components/StatsStrip'
 import LeadershipBadge from '../components/LeadershipBadge'
 import CTABand from '../components/CTABand'
-import WhatsAppButton from '../components/WhatsAppButton'
 import Reveal from '../components/Reveal'
-import { visionMission, leadership, repairServices, supplyServices } from '../data/content'
+import { visionMission, leadership, supplyServices, supplyCategories } from '../data/content'
+
+// One product per category for the home-page catalog preview.
+const FEATURED_SUPPLY = supplyCategories.map((c) => ({ category: c.title, item: c.items[0] }))
 
 // Lab photography (Unsplash, free license) — see public/images/lab/.
 const LAB_SHOTS = [
@@ -68,8 +70,8 @@ export default function Home() {
                 />
               </div>
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-strong">Our Mission</p>
-                <h2 className="mt-3 font-display text-2xl font-bold tracking-tight sm:text-3xl">
+                <p className="text-5xl  font-display font-bold uppercase text-amber-strong">Our Mission</p>
+                <h2 className="mt-3 font-display text-xl font-bold tracking-tight sm:text-2xl">
                   Operator-grade service, inside the operator's budget
                 </h2>
                 <p className="mt-4 max-w-[62ch] leading-relaxed text-dim">{visionMission.mission}</p>
@@ -108,8 +110,8 @@ export default function Home() {
                 </div>
               </div>
               <div className="lg:order-1">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-strong">Our Vision</p>
-                <h2 className="mt-3 font-display text-2xl font-bold tracking-tight sm:text-3xl">
+                <p className="text-5xl font-display font-bold uppercase  text-amber-strong">Our Vision</p>
+                <h2 className="mt-3 font-display text-xl font-bold tracking-tight sm:text-2xl">
                   The telecom services provider Pakistan's operators rely on
                 </h2>
                 <p className="mt-4 max-w-[62ch] leading-relaxed text-dim">{visionMission.vision}</p>
@@ -130,142 +132,70 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Capabilities preview — repair feature + supply mini-catalog */}
+      {/* Supply preview — ecommerce-style: one product per category, then a
+          catalog button that lands on the Services supply section */}
       <section className="border-b border-line">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-24">
           <Reveal>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-strong">Capabilities</p>
-            <h2 className="mt-3 font-display text-2xl font-bold tracking-tight sm:text-3xl">
-              What we repair and supply
-            </h2>
-            <p className="mt-3 max-w-[62ch] text-dim">
-              Two lines of work, one standard: operator-grade repair and documented supply
-              of new and refurbished equipment.
-            </p>
+            <div className="flex flex-wrap items-end justify-between gap-4">
+              <div>
+                {/* <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-strong">Supply catalog</p> */}
+                <h2 className="mt-3 font-display text-2xl font-bold tracking-tight sm:text-3xl">
+                  Stocked, tested, ready to ship
+                </h2>
+                <p className="mt-3 max-w-[62ch] text-dim">
+                  New and refurbished equipment and consumables: stocked, sourced and delivered
+                  to site with proper part traceability.
+                </p>
+              </div>
+              {/* <span className="tnum font-mono text-xs font-semibold text-amber-strong">
+                {supplyServices.length} LINES STOCKED
+              </span> */}
+            </div>
           </Reveal>
 
-          <div className="mt-12 grid gap-6 lg:grid-cols-12">
-            {/* Local Repair — bench photograph under a scrim, ledger list on top.
-                Like the page banners, the scrim pins the copy to the light label
-                color in both themes. */}
-            <Reveal className="min-w-0 lg:col-span-7">
-              <article className="group relative flex h-full flex-col overflow-hidden border border-line transition-colors duration-300 hover:border-amber/40">
-                <img
-                  src="/images/lab/lab-scope.webp"
-                  alt="Electronics workbench with a circuit under test and measurement gear"
-                  loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                />
-                <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-[#0e1613]/95 via-[#0e1613]/85 to-[#0e1613]/50" />
-                <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0e1613]/80 to-transparent" />
-
-                <div className="relative flex flex-1 flex-col p-6 sm:p-8">
-                  <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#f4f2ea]/60">
-                    <span aria-hidden="true" className="inline-block h-1.5 w-1.5 rounded-full bg-amber" />
-                    Bench &amp; field
-                  </p>
-                  <div className="mt-3 flex items-baseline justify-between gap-3">
-                    <h3 className="font-display text-xl font-bold tracking-tight text-[#f4f2ea]">Local Repair</h3>
-                    <span className="tnum font-mono text-xs font-semibold text-amber">
-                      {repairServices.length} SEGMENTS
-                    </span>
+          <div className="mt-12 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
+            {FEATURED_SUPPLY.map(({ category, item }, i) => (
+              <Reveal key={item.name} delay={i * 90}>
+                <Link
+                  to="/services#supply"
+                  className="group flex h-full flex-col border border-line bg-panel transition-all duration-300 hover:-translate-y-1 hover:border-amber/50"
+                >
+                  <div className="aspect-square overflow-hidden bg-white">
+                    <img
+                      src={item.img}
+                      alt={item.name}
+                      loading="lazy"
+                      className="h-full w-full object-contain p-4 transition-transform duration-500 ease-out group-hover:scale-[1.06]"
+                    />
                   </div>
-                  <p className="mt-2 max-w-[52ch] text-sm leading-relaxed text-[#f4f2ea]/75">
-                    Bench and field repair to operator standard: diagnosed, repaired, load-tested
-                    and documented before it goes back on the truck.
-                  </p>
-                  <ul className="mt-5 grid gap-x-6 border-t border-[#f4f2ea]/15 sm:grid-cols-2">
-                    {repairServices.slice(0, 6).map((item, i) => (
-                      <li
-                        key={item.name}
-                        className="flex items-baseline gap-3 border-b border-[#f4f2ea]/15 py-2.5 text-sm"
-                      >
-                        <span className="tnum font-mono text-[11px] font-semibold text-amber">
-                          {String(i + 1).padStart(2, '0')}
-                        </span>
-                        <span className="text-[#f4f2ea]">{item.name}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="mt-4 text-xs text-[#f4f2ea]/60">
-                    + {repairServices.length - 6} more segments ·{' '}
-                    <Link to="/services" className="font-semibold text-amber underline-offset-4 hover:underline">
-                      full repair list
-                    </Link>
-                  </p>
-                </div>
-              </article>
-            </Reveal>
-
-            {/* Supply — snap-scrolling product rail, white tiles like the catalogue.
-                min-w-0 on the grid child lets the rail shrink instead of
-                blowing out the page width on mobile. */}
-            <Reveal className="min-w-0 lg:col-span-5" delay={120}>
-              <article className="flex h-full min-w-0 flex-col border border-line bg-panel transition-colors duration-300 hover:border-amber/40">
-                <div className="flex flex-1 flex-col p-6 sm:p-8">
-                  <div className="flex items-baseline justify-between gap-3">
-                    <h3 className="font-display text-xl font-bold tracking-tight">Supply</h3>
-                    <span className="tnum font-mono text-xs font-semibold text-amber-strong">
-                      {supplyServices.length} LINES STOCKED
-                    </span>
+                  <div className="flex flex-1 flex-col border-t border-line p-4">
+                    <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-amber-strong">{category}</span>
+                    <span className="mt-1.5 text-sm font-bold leading-snug text-label">{item.name}</span>
+                    {item.tag && <span className="mt-1 text-xs text-dim">{item.tag}</span>}
                   </div>
-                  <p className="mt-2 text-sm leading-relaxed text-dim">
-                    New and refurbished equipment and consumables, stocked, sourced and delivered
-                    to site with proper part traceability.
-                  </p>
-                  <Link
-                    to="/services"
-                    className="mt-6 inline-flex self-start bg-amber px-5 py-2.5 font-display text-sm font-semibold text-rack transition-all duration-200 hover:bg-[#f0b45a] active:scale-[0.98]"
-                  >
-                    Full supply catalog
-                  </Link>
-                  <p className="mt-auto pt-6 text-xs leading-relaxed text-dim">
-                    Fusion splicers, OTDRs, fiber test sets, CCTV and cable testers, FTTH toolkits.
-                    Drag the rail for a preview.
-                  </p>
-                </div>
-                <div className="relative border-t border-line">
-                  <div className="scrollbar-hide flex snap-x snap-mandatory gap-px overflow-x-auto bg-line">
-                    {supplyServices.slice(0, 7).map((item) => (
-                      <div key={item.name} className="relative aspect-square w-32 shrink-0 snap-start overflow-hidden bg-white sm:w-36" title={item.name}>
-                        <img
-                          src={item.img}
-                          alt={item.name}
-                          loading="lazy"
-                          className="h-full w-full object-contain p-2 transition-transform duration-500 ease-out hover:scale-[1.06]"
-                        />
-                      </div>
-                    ))}
-                    <Link
-                      to="/services"
-                      className="flex aspect-square w-32 shrink-0 snap-start flex-col items-center justify-center gap-1 bg-panel2 text-center transition-colors duration-200 hover:bg-amber/10 sm:w-36"
-                    >
-                      <span className="tnum font-display text-lg font-bold text-amber-strong">
-                        +{supplyServices.length - 7}
-                      </span>
-                      <span className="px-2 text-[10px] font-semibold uppercase tracking-[0.1em] text-dim">more lines</span>
-                    </Link>
-                  </div>
-                  {/* fade hint that the rail continues */}
-                  <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-panel to-transparent" />
-                </div>
-              </article>
-            </Reveal>
+                </Link>
+              </Reveal>
+            ))}
           </div>
 
-          <Reveal className="mt-8">
-            <WhatsAppButton
-              variant="outline"
-              message="Hello Al Noor Engineers, I would like to discuss a repair or supply requirement."
+          <Reveal className="mt-10 text-center">
+            <Link
+              to="/services#supply"
+              className="inline-flex items-center gap-2.5 bg-amber px-6 py-3 font-display text-sm font-semibold text-rack transition-all duration-200 hover:bg-[#f0b45a] active:scale-[0.98]"
             >
-              Get In Touch
-            </WhatsAppButton>
+              Browse the full catalog
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="m13 6 6 6-6 6" />
+              </svg>
+            </Link>
           </Reveal>
         </div>
       </section>
 
       {/* Inside the lab — photography band */}
-      <section className="border-b border-line bg-panel">
+      {/* <section className="border-b border-line bg-panel">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-24">
           <Reveal>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-strong">Inside the lab</p>
@@ -297,7 +227,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <StatsStrip />
 
