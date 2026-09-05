@@ -9,8 +9,8 @@ export default function Logo({ className = 'h-8 w-8' }) {
       src="/images/logo-mark.png"
       alt="Al Noor Engineers"
       className={className}
-      width="480"
-      height="480"
+      width="128"
+      height="128"
     />
   )
 }

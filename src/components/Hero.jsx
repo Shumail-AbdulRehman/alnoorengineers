@@ -6,7 +6,7 @@ import { hero } from '../data/content'
 // dark server room. Poster shows while the video loads and under reduced
 // motion, where playback is paused entirely.
 const HERO_VIDEO = '/images/hero-lab.mp4'
-const HERO_POSTER = '/images/hero-poster.jpg'
+const HERO_POSTER = '/images/hero-poster.webp'
 
 export default function Hero() {
   const videoRef = useRef(null)

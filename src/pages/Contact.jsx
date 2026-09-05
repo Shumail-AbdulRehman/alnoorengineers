@@ -7,7 +7,7 @@ export default function Contact() {
   return (
     <>
       <PageBanner
-        image="/images/banner-contact.jpg"
+        image="/images/banner-contact.webp"
         alt="Numbered ports on a patch panel with patched network cabling"
         title="Fast channel in, fast answer out"
         lede="WhatsApp or phone is the quickest route: you reach the people who run the lab,

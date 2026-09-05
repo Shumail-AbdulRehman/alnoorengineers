@@ -46,7 +46,7 @@ export default function Services() {
   return (
     <>
       <PageBanner
-        image="/images/banner-services.jpg"
+        image="/images/banner-services.webp"
         alt="Server racks with patched cabling and status LEDs"
         title="Every unit we repair, every line we stock"
         lede="The full capability list below: bench-tested repair segments and the supply

@@ -9,7 +9,7 @@ export default function About() {
   return (
     <>
       <PageBanner
-        image="/images/banner-about.jpg"
+        image="/images/banner-about.webp"
         alt="Technician soldering a circuit board at a repair bench"
         title="A decade of keeping Pakistan’s telecom hardware online"
         lede={aboutIntro}
@@ -52,7 +52,7 @@ export default function About() {
             <figure className="group mt-12 overflow-hidden border border-line bg-panel2">
               <div className="aspect-[21/9] overflow-hidden">
                 <img
-                  src="/images/lab/lab-board-wide.jpg"
+                  src="/images/lab/lab-board-wide.webp"
                   alt="Circuit board under inspection in the repair lab"
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"

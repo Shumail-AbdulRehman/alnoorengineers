@@ -11,17 +11,17 @@ import { visionMission, leadership, repairServices, supplyServices } from '../da
 // Lab photography (Unsplash, free license) — see public/images/lab/.
 const LAB_SHOTS = [
   {
-    src: '/images/lab/lab-bench.jpg',
+    src: '/images/lab/lab-bench.webp',
     alt: 'Engineers working at test benches in the repair lab',
     caption: 'The bench: fault isolation and rework',
   },
   {
-    src: '/images/lab/lab-pcb.jpg',
+    src: '/images/lab/lab-pcb.webp',
     alt: 'Macro shot of a circuit board under repair',
     caption: 'Component-level rework',
   },
   {
-    src: '/images/lab/lab-cabling.jpg',
+    src: '/images/lab/lab-cabling.webp',
     alt: 'Numbered patch panel with network cabling',
     caption: 'Field infrastructure we keep online',
   },
@@ -55,13 +55,13 @@ export default function Home() {
             <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
               <div className="relative">
                 <img
-                  src="/images/lab/lab-field.jpg"
+                  src="/images/lab/lab-field.webp"
                   alt="Field engineer servicing a telecom cabinet"
                   loading="lazy"
                   className="aspect-[4/3] w-full border border-line object-cover"
                 />
                 <img
-                  src="/images/lab/lab-kit.jpg"
+                  src="/images/lab/lab-kit.webp"
                   alt="Test instruments and tools laid out on the bench"
                   loading="lazy"
                   className="absolute -bottom-8 -right-4 hidden w-2/5 border-4 border-rack object-cover shadow-2xl sm:block md:-right-8"
@@ -94,13 +94,13 @@ export default function Home() {
               <div className="lg:order-2">
                 <div className="relative">
                   <img
-                    src="/images/lab/lab-macro.jpg"
+                    src="/images/lab/lab-macro.webp"
                     alt="Macro detail of a telecom circuit board"
                     loading="lazy"
                     className="aspect-[4/3] w-full border border-line object-cover"
                   />
                   <img
-                    src="/images/lab/lab-board-wide.jpg"
+                    src="/images/lab/lab-board-wide.webp"
                     alt="Boards under inspection in the repair lab"
                     loading="lazy"
                     className="absolute -bottom-8 -left-4 hidden w-2/5 border-4 border-rack object-cover shadow-2xl sm:block md:-left-8"
@@ -148,10 +148,10 @@ export default function Home() {
             {/* Local Repair — bench photograph under a scrim, ledger list on top.
                 Like the page banners, the scrim pins the copy to the light label
                 color in both themes. */}
-            <Reveal className="lg:col-span-7">
+            <Reveal className="min-w-0 lg:col-span-7">
               <article className="group relative flex h-full flex-col overflow-hidden border border-line transition-colors duration-300 hover:border-amber/40">
                 <img
-                  src="/images/lab/lab-scope.jpg"
+                  src="/images/lab/lab-scope.webp"
                   alt="Electronics workbench with a circuit under test and measurement gear"
                   loading="lazy"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
@@ -197,9 +197,11 @@ export default function Home() {
               </article>
             </Reveal>
 
-            {/* Supply — snap-scrolling product rail, white tiles like the catalogue */}
-            <Reveal className="lg:col-span-5" delay={120}>
-              <article className="flex h-full flex-col border border-line bg-panel transition-colors duration-300 hover:border-amber/40">
+            {/* Supply — snap-scrolling product rail, white tiles like the catalogue.
+                min-w-0 on the grid child lets the rail shrink instead of
+                blowing out the page width on mobile. */}
+            <Reveal className="min-w-0 lg:col-span-5" delay={120}>
+              <article className="flex h-full min-w-0 flex-col border border-line bg-panel transition-colors duration-300 hover:border-amber/40">
                 <div className="flex flex-1 flex-col p-6 sm:p-8">
                   <div className="flex items-baseline justify-between gap-3">
                     <h3 className="font-display text-xl font-bold tracking-tight">Supply</h3>
