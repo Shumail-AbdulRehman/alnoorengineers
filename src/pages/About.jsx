@@ -49,15 +49,16 @@ export default function About() {
             </p>
           </Reveal>
           <Reveal delay={120}>
+            {/* aspect lives on the img itself — no inner frame, so no panel
+                color can peek through. Taller 4:3 crop on mobile, cinematic
+                21:9 on desktop. */}
             <figure className="group mt-12 overflow-hidden border border-line bg-panel2">
-              <div className="aspect-[21/9] overflow-hidden">
-                <img
-                  src="/images/lab/lab-board-wide.webp"
-                  alt="Circuit board under inspection in the repair lab"
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-                />
-              </div>
+              <img
+                src="/images/lab/lab-board-wide.webp"
+                alt="Circuit board under inspection in the repair lab"
+                loading="lazy"
+                className="aspect-[4/3] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03] sm:aspect-[16/10] lg:aspect-[21/9]"
+              />
             </figure>
           </Reveal>
         </div>
