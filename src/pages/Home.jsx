@@ -70,7 +70,7 @@ export default function Home() {
                 />
               </div>
               <div>
-                <p className="text-5xl  font-display font-bold uppercase text-amber-strong">Our Mission</p>
+                <p className="text-4xl sm:text-5xl  font-display font-bold uppercase text-amber-strong">Our Mission</p>
                 <h2 className="mt-3 font-display text-xl font-bold tracking-tight sm:text-2xl">
                   Operator-grade service, inside the operator's budget
                 </h2>
@@ -110,7 +110,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="lg:order-1">
-                <p className="text-5xl font-display font-bold uppercase  text-amber-strong">Our Vision</p>
+                <p className="text-4xl sm:text-5xl font-display font-bold uppercase  text-amber-strong">Our Vision</p>
                 <h2 className="mt-3 font-display text-xl font-bold tracking-tight sm:text-2xl">
                   The telecom services provider Pakistan's operators rely on
                 </h2>
